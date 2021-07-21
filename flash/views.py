@@ -4,11 +4,15 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import flashCard
 from rest_framework import viewsets
-from .serializer import FlashCardSerializer
+from .serializer import FlashCardSerializer, ProfileSerializer
 
 class flashCardViewSet(viewsets.ModelViewSet):
     serializer_class = FlashCardSerializer
     queryset = flashCard.objects.all()
+    
+class ProfileViewSet(viewsets.ModelViewSet):
+    serializer_class = ProfileSerializer
+    queryset = Profile.objects.all()
 
 @login_required(login_url='/accounts/login/')
 def default(request):
