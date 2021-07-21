@@ -33,7 +33,7 @@ class Profile(models.Model):
 
 
 class flashCard(models.Model):
-    profile=models.ForeignKey(User,null=True,on_delete=models.CASCADE)
+    profile=models.ForeignKey(Profile,null=True,on_delete=models.CASCADE)
     title= models.CharField(max_length=30)
     description = HTMLField(max_length=500,default='write a description')
     pub_date=models.DateTimeField(auto_now_add=True)
