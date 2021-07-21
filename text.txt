@@ -1,0 +1,9 @@
+Project 2: Flash cards
+Your baby brother is studying for a really big test in school. To help him remember he uses these tiny flash cards where he writes anything he thinks seems important. But he always seems to lose them or they get destroyed in some way.
+You decide to help him.
+User story
+A user must be authenticated to see his flashcards.
+A user's flash card can contain a title with some notes.
+Flashcards should be organized according to subjects/courses.
+A user can delete or update a flash card he has created.
+A user should see when the flash card was created and when it was last updated.
