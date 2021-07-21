@@ -1,15 +1,11 @@
-{%extends 'base.html'%}
-
-
+{% extends "all-cards/base.html" %}
 {% block content %}
-<div class="container ">
-    <div class="content-section">
-        <h2>You have successfully logged out</h2>
-        <div class="border-top pt-3">
-            <small class="text-muted"><a href="{% url 'login'%}">Log In Again</a></small>
-        </div>
-
+<div class="container">
+    <h3 class="white-important">You've been logged out</h3>
+    <div class="pt-3">
+        <small class="text-muted">
+            Login again? <a class="ml-2" href="{% url 'login' %}">Login</a>
+        </small>
     </div>
 </div>
-
-{% endblock %}
+{% endblock content %}
