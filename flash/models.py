@@ -2,6 +2,7 @@
 from django.db import models
 import datetime as dt
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 from django.template.defaultfilters import slugify
 from cloudinary.models import CloudinaryField
 
@@ -31,3 +32,9 @@ class Profile(models.Model):
     return self.user.username
 
 
+class flashCard(models.Model):
+    profile=models.ForeignKey(User,null=True,on_delete=models.CASCADE)
+    title= models.CharField(max_length=30)
+    description = HTMLField(max_length=500,default='write a description')
+    pub_date=models.DateTimeField(auto_now_add=True)
+    image_landing=CloudinaryField()
