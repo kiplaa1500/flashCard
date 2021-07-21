@@ -38,3 +38,26 @@ class flashCard(models.Model):
     description = HTMLField(max_length=500,default='write a description')
     pub_date=models.DateTimeField(auto_now_add=True)
     image_landing=CloudinaryField()
+    
+    def save_flashcards(self):
+        self.save()
+
+    def delete_flashcards(self):
+        self.delete()
+            
+    @classmethod
+    def search_by_flashcards(cls,search_term):
+        flashcards=flashCard.objects.filter(title=search_term)
+        return flashcards
+
+    @classmethod
+    def get_profile_flashcards(cls,profile):
+        flashcards=flashCard.objects.filter(profile__id=profile)
+        return flashcards
+
+    def __str__(self):
+        return self.title
+
+
+
+   

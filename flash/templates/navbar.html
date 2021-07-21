@@ -31,7 +31,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'index'%} ">Home
+        <a class="nav-link" href="{% url 'home'%} ">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -51,12 +51,12 @@
         {% else %}
           <div>
             <li class="navbar-item" style="list-style: none;">
-              <a class="nav-link text-white" href="{% url 'login' %}"><h4>Login</h4></a>
+              <a class="nav-link text-white" href="/accounts/login/"><h4>Login</h4></a>
             </li>
           </div>
           <div>
             <li class="navbar-item" style="list-style: none;">
-              <a class="nav-link text-white" href="{% url 'register' %}"><h4>Register</h4></a>
+              <a class="nav-link text-white" href="/accounts/register/"><h4>Register</h4></a>
               
             </li>
           </div>
@@ -65,7 +65,7 @@
 
       <div class="navbar-nav">
             <div class="text-center">
-            <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_subjects' %}">
+            <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
             <input style="text-align: center;"  class="form-control" name="subject" type="search" placeholder="Search... " aria-label="Search">
             </form>
         </div>
