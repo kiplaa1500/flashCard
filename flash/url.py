@@ -1,10 +1,15 @@
-from django.urls import url
-from django.contrib.auth import views as auth_views
-from django.contrib.auth.views import LoginView, LogoutView 
-from . import views
+# type:ignore
+from posixpath import basename
+from django.urls import path,include
+from rest_frameworks.routers import DefaultRauter
+from .views import flashCardViewSet
+
+
+rauter = DefaultRauter
+router.register('flashcard',flashCardViewSet,basename=flashcard)
 
 urlpatterns = [
-    url(r'^accounts/register$',views.registration,name='register'),
-    url(r'^accounts/login$',auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    url(r'^accounts/logout$',auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout')
+    path('viewset/',include('router.urls')),
+    path('viewset/<int:id>',include('router.urls')),
+
 ]

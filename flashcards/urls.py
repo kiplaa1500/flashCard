@@ -1,5 +1,4 @@
 # type:ignore
-from os import pathsep
 from django.urls import path,include
 from django.contrib import admin
 from django.contrib.auth import views
