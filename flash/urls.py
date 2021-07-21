@@ -1,15 +1,15 @@
 # type:ignore
 from posixpath import basename
 from django.urls import path,include
-from rest_frameworks.routers import DefaultRauter
+from rest_framework.routers import DefaultRouter
 from .views import flashCardViewSet
 
 
-rauter = DefaultRauter
-router.register('flashcard',flashCardViewSet,basename=flashcard)
+router = DefaultRouter()
+router.register('flashcard',flashCardViewSet,basename='flashcard')
 
 urlpatterns = [
-    path('viewset/',include('router.urls')),
-    path('viewset/<int:id>',include('router.urls')),
+    path('viewset/',include(router.urls)),
+    path('viewset/<int:id>',include(router.urls)),
 
 ]
