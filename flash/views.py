@@ -1,5 +1,12 @@
+# type:ignore
 from django.shortcuts import render,redirect
 from .forms import *
+from rest_framework import viewsets
+from .serializer import FlashCardSerializer
+
+class flashCardViewSet(viewsets.ModelViewSet)
+
+
 
 # Create your views here.
 def registration(request):
