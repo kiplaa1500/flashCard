@@ -1,10 +1,13 @@
 # type:ignore
 from django.shortcuts import render,redirect
 from .forms import *
+from .models import flashCard
 from rest_framework import viewsets
 from .serializer import FlashCardSerializer
 
-class flashCardViewSet(viewsets.ModelViewSet)
+class flashCardViewSet(viewsets.ModelViewSet):
+    serializer_class = FlashCardSerializer
+    queryset = flashCard.objects.all()
 
 
 
