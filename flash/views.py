@@ -18,6 +18,16 @@ def default(request):
 
     }
     return render(request,'home.html',context)
+@login_required(login_url='/accounts/login/')
+def flashcard(request,id):
+    try:
+        flashcards = flashCard.objects.get(id=id)
+    except Exception as e:
+        raise Http404()
+    context={
+        "flashcards":flashcards,
+    }
+    return render(request,'post.html',context)
 
 @login_required(login_url='/accounts/login/')
 def profile(request,username):

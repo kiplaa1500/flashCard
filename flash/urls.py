@@ -15,10 +15,11 @@ router.register('flashcard',flashCardViewSet,basename='flashcard')
 urlpatterns = [
     path('viewset/',include(router.urls)),
     path('viewset/<int:id>',include(router.urls)),
-    path('flascard/<int:id>',views.default,name='flashcard'),
+    path('flascard/<int:id>',views.flashcard,name='flashcard_item'),
     path('',views.default,name='home'),
     path('search/', views.search_results, name='search_results'),
     url(r'^profile/(?P<username>\w+)', views.profile, name='profile'),
+    url(r'^projects/(\d+)',views.flashcard,name='flascard_item'),
 
 
 ]
