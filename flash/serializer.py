@@ -5,7 +5,7 @@ from .models import Profile,flashCard
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ('user','profile_photo',) 
+        fields = ('user','photo','name') 
         
         
 class FlashCardSerializer(serializers.ModelSerializer):

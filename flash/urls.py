@@ -2,7 +2,7 @@
 from posixpath import basename
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
-from .views import flashCardViewSet
+from .views import flashCardViewSet,ProfileViewSet
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -11,6 +11,7 @@ from django.conf.urls import url
 
 router = DefaultRouter()
 router.register('flashcard',flashCardViewSet,basename='flashcard')
+router.register('profile',ProfileViewSet,basename='profile')
 
 urlpatterns = [
     path('viewset/',include(router.urls)),
