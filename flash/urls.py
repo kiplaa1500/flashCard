@@ -20,7 +20,7 @@ urlpatterns = [
     path('',views.default,name='home'),
     path('search/', views.search_results, name='search_results'),
     url(r'^profile/(?P<username>\w+)', views.profile, name='profile'),
-    url(r'^projects/(\d+)',views.flashcard,name='flascard_item'),
+    url(r'^project/(\d+)',views.flashcard,name='flascard_item'),
 
 
 ]

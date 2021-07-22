@@ -1,18 +1,24 @@
 # type:ignore
 from django.shortcuts import render,redirect
+from django.http.response import Http404,HttpResponse
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import flashCard
 from rest_framework import viewsets
+from .permissions import IsAdminOrReadOnly
 from .serializer import FlashCardSerializer, ProfileSerializer
 
 class flashCardViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly]
     serializer_class = FlashCardSerializer
     queryset = flashCard.objects.all()
-    
+   
+
 class ProfileViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly]
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
+    
 
 @login_required(login_url='/accounts/login/')
 def default(request):
