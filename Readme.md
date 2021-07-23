@@ -40,6 +40,6 @@ Technologies used to develop this application:
 
 Reach out to us on :[kiplangatdennis99@gmail.com]
 
-## [License](LICENSE.md)
+## [License](License.md)
 
 Copyright (c) 2021 [DCM](https://github.com/kiplaa1500/flashCard)  
