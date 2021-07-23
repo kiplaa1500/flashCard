@@ -11,4 +11,4 @@ class ProfileSerializer(serializers.ModelSerializer):
 class FlashCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = flashCard
-        fields = ('title','image_landing','description')
+        fields = ('title','image_landing','description','pub_date')

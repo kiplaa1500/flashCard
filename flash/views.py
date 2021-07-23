@@ -7,17 +7,20 @@ from .models import flashCard
 from rest_framework import viewsets
 from .permissions import IsAdminOrReadOnly
 from .serializer import FlashCardSerializer, ProfileSerializer
+from rest_framework.permissions import IsAdminUser
 
 class flashCardViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAdminOrReadOnly]
-    serializer_class = FlashCardSerializer
+    permission_classes = [IsAdminUser]
     queryset = flashCard.objects.all()
+    serializer_class = FlashCardSerializer
+    
    
 
 class ProfileViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAdminOrReadOnly]
-    serializer_class = ProfileSerializer
+    permission_classes = [IsAdminUser]
     queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    
     
 
 @login_required(login_url='/accounts/login/')
